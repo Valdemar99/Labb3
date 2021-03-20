@@ -39,6 +39,12 @@ public class MovieServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		Movie mov = new Movie();
+		mov.setIdMovie(1);
+		mov.setTitle("Harry Potter och de Vises Sten");
+		mov.setPrice(200);
+		facade.createMovie(mov);
+		
 		PrintWriter out = response.getWriter();
 		
 		out.println("<!DOCTYPE html><html><head>");
@@ -70,7 +76,7 @@ public class MovieServlet extends HttpServlet {
 //			Movie createdMovie = facade.createMovie(movie);
 //			out.print("<p>" + createdMovie.getTitle() + " ");
 //			out.print(createdMovie.getPrice() + " kr</p>");
-			
+//			
 //			out.print("<h2>**** MovieEAO Delete ****</h2>");
 //			facade.deleteMovie(1);
 //			facade.deleteMovie(2);
